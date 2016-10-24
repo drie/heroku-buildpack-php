@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ -z "${SUDO_HACK+x}" ]] ; then
+    export SUDO_HACK=true
+    exec sudo -E -u nobody $0 "${@}"
+fi
+
 # fail hard
 set -o pipefail
 # fail harder
