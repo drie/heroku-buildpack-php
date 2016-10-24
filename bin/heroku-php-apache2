@@ -2,7 +2,7 @@
 
 if [[ -z "${SUDO_HACK+x}" ]] ; then
     export SUDO_HACK=true
-    exec sudo -E -u nobody $0 "PATH=$PATH" "${@}"
+    exec sudo -E -u nobody "PATH=$PATH" $0 "${@}"
 fi
 
 # fail hard
